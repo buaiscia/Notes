@@ -7,10 +7,11 @@ One case is when we're updating some data and we call some function external to 
 ```js
   const updatingUIMethod = () => {
     ...
+    return value
   }
   
   useEffect(() => {
-    changeState = updatingUIMethod()
+    setChangeState(updatingUIMethod())
   }, [updatingUIMethod] )
 ```
 
