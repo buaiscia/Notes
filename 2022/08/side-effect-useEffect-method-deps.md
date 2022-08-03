@@ -15,7 +15,7 @@ One case is when we're updating some data and we call some function external to 
   }, [updatingUIMethod] )
 ```
 
-Now, if you have eslint installed in the project, it may warn you that updatingUIMethod can create an infinite loop as it's continously updating the UI. Indeed, if you just run it as it is, React will throw the error 'Max depth reached', meaning it went on a re-rerendering loop calling again and again the function.
+Now, if you have eslint installed in the project, especially with the react/recommended plugin, it may warn you that updatingUIMethod can create an infinite loop as it's continously updating the UI. Indeed, if you just run it as it is, React will throw the error 'Max depth reached', meaning it went on a re-rerendering loop calling again and again the function.
 
 As eslint suggests, the easiest way to fix it is wrapping the function with the useCallback hook. UseCallback in fact re-run the function only when the input props change. Otherwise it will return the same result. 
 
